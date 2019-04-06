@@ -4,16 +4,148 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>登陆</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+
+			.top{
+				height: 100px;
+				background-color: #999;
+			}
+			.logo{
+				border: 1px solid #000;
+				border-radius: 150px;
+				padding: 5px;
+				margin-top: 20px;
+				margin-left: 270px;
+				height: 50px;
+				display: inline-block;
+			}
+			.login{
+				width: 500px;
+				height: 700px;
+				margin: 0 auto;
+			}
+			.login .top{
+				margin-top: 50px;
+				width: 500px;
+				height: 38px;
+				background: url("Images/line-center.png") repeat-x;
+				border-radius: 10px 10px 0px 0px;
+			}
+			.login .buttom{
+				width: 498px;
+				height: 300px;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+			.login .top h1{
+				padding-top: 5px;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				color: white;
+				text-align: center;
+			}
+			.login .buttom .name{
+				height: 50px;
+				width: 500px;
+			}
+			.login .buttom .name span{
+				margin-top: 70px;
+				float: left;
+				width: 150px;
+				height: 30px;
+				text-height: 30px;
+				text-align: right;
+				display: inline-block;
+			}
+			.login .buttom .name input{
+				display: inline-block;
+				float: right;
+				width: 270px;
+				height: 30px;
+				margin-right: 60px;
+				margin-top: 70px;
+			}
+			.login .buttom .pwd{
+				height: 50px;
+				width: 500px;
+			}
+			.login .buttom .pwd span{
+				margin-top: 50px;
+				float: left;
+				width: 150px;
+				height: 30px;
+				text-height: 30px;
+				text-align: right;
+				display: inline-block;
+			}
+			.login .buttom .pwd input{
+				display: inline-block;
+				float: right;
+				width: 270px;
+				height: 30px;
+				margin-right: 60px;
+				margin-top: 45px;
+			}
+			.submit input{
+				background-color: skyblue;
+				width: 200px;
+				height: 50px;
+				margin-top: 30px;
+				margin-left: 40px;
+				color: white;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				float: left;
+				border-radius: 5px;
+			}
+			.register a{
+				display: inline-block;
+				width: 200px;
+				height: 50px;
+				margin-top: 30px;
+				margin-right: 40px;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				float: right;
+				text-decoration-line: none;
+				line-height: 50px;
+				text-align: center;
+				color: #999999;
+			}
+		</style>
 	</head>
 	<body>
-		<form action="login.jsp" method="post">
-			UserName
-			<input type="text" name="username" />
-			<br />
-			Password
-			<input type="password" name="password" />
-			<br />
-			<input type="submit" name="submit" value="Login" />
-		</form>
+
+	<div class="top">
+		<img src="Images/logo.png" class="logo">
+	</div>
+
+	<div class="login">
+		<div class="top">
+			<h1>用户登陆</h1>
+		</div>
+		<div class="buttom">
+			<form action="login.jsp" method="post">
+				<div class="name">
+					<span>用户名:</span>
+					<input type="text" name="username" />
+				</div>
+				<div class="pwd">
+					<span>密码:</span>
+					<input type="password" name="password" />
+				</div>
+				<div class="submit">
+					<input type="submit" name="submit" value="立即登陆" />
+				</div>
+				<div class="register">
+					<a href="register.html">立即注册</a>
+				</div>
+			</form>
+		</div>
+	</div>
 	</body>
 </html>
