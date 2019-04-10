@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url("Images/wallpaper.jpg");
+        }
+        .lay_top{
+            height: 100px;
+            width: 1000px;
+            background-color: #c1d1e1;
+            margin: 0 auto;
+            box-shadow: 5px 5px 5px #cccccc;
+            position: relative;
+
+        }
+        .lay_top .photo1{
+            height: 70px;
+            margin-top: 10px;
+            margin-left: 700px;
+            box-shadow: 5px 5px 10px;
+        }
+        .lay_top .photo2{
+            height: 50px;
+            margin-top: 30px;
+            margin-left: 40px;
+            /*给图片添加圆角阴影↓*/
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+        }
+        .lay_top .logo{
+            margin-top: 20px;
+            margin-left: 100px;
+            height: 50px;
+            position: absolute;
+            /*给图片添加圆角阴影↓*/
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+<div class="lay_top">
+    <img src="Images/logo.png" class="logo">
+    <img src="Images/navphoto1.png" class="photo1">
+    <img src="Images/navphoto2.png" class="photo2">
+</div>
+
+</body>
+</html>
