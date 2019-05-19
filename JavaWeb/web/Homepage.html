@@ -143,7 +143,7 @@
         .content .scenery{
             height: 1460px;
         }
-        .content ul li{
+        .content ul>li{
             display: inline-block;
             height: 340px;
             width: 330px;
@@ -152,12 +152,18 @@
             text-align: center;
             line-height: 300px;
             position: relative;
+            overflow: hidden;
         }
         .content .people ul li ul{
             position: absolute;
             width: 100%;
             bottom: 0;
             left: 0;
+            opacity: 0;
+        }
+        .content .people>ul>li:hover ul{
+            animation: appear 0.5s linear 0.2s normal;
+            animation-fill-mode: forwards;
         }
         .content .people ul li ul li{
 
@@ -169,23 +175,75 @@
             background-image: none !important;
             margin-top: 0px !important;
             float: left;
-            /*color: #999999;*/
             opacity: 0.5;
+            margin-left: 25px;
         }
         .content .people ul li ul li>img{
             height: 20px !important;
             width: 20px !important;
             margin-top: 0 !important;
         }
-        .content .people ul li ul li:nth-child(1){
-            left: 15%;
+
+        .content .animal ul li ul{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
         }
-        .content .people ul li ul li:nth-child(2){
-            left: 15%;
+        .content .animal>ul>li:hover ul{
+            animation: appear 0.5s linear 0.2s normal;
+            animation-fill-mode: forwards;
         }
-        .content .people ul li ul li:nth-child(3){
-            left: 15%;
+        .content .animal ul li ul li{
+
+            height: 40px;
+            width: 80px;
+            bottom: 0px;
+            text-align: center;
+            line-height: 40px;
+            background-image: none !important;
+            margin-top: 0px !important;
+            float: left;
+            opacity: 0.5;
+            margin-left: 25px;
         }
+        .content .animal ul li ul li>img{
+            height: 20px !important;
+            width: 20px !important;
+            margin-top: 0 !important;
+        }
+
+        .content .scenery ul li ul{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .content .scenery>ul>li:hover ul{
+            animation: appear 0.5s linear 0.2s normal;
+            animation-fill-mode: forwards;
+        }
+        .content .scenery ul li ul li{
+
+            height: 40px;
+            width: 80px;
+            bottom: 0px;
+            text-align: center;
+            line-height: 40px;
+            background-image: none !important;
+            margin-top: 0px !important;
+            float: left;
+            opacity: 0.5;
+            margin-left: 25px;
+        }
+        .content .scenery ul li ul li>img{
+            height: 20px !important;
+            width: 20px !important;
+            margin-top: 0 !important;
+        }
+
         .content .people ul li:nth-child(1){
             background: url("Images/photos/people/people1.png") no-repeat center center;
             background-size: 100px 150px;
@@ -529,6 +587,15 @@
                 opacity: 0.5;
             }
         }
+        @keyframes appear {
+            from{
+                bottom: -40px;
+            }
+            to{
+                bottom: 0;
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -553,54 +620,194 @@
                 <a href="#"><li><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people2.png"><img src="Images/frame/frame7.png"></a><ul>
-                <li>点赞</li>
-                <li>评论</li>
-                <li>收藏</li>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
             </ul></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people3.png"><img src="Images/frame/frame5.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people4.png"><img src="Images/frame/frame8.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people5.png"><img src="Images/frame/frame6.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people6.png"><img src="Images/frame/frame3.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people7.png"><img src="Images/frame/frame7.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people8.png"><img src="Images/frame/frame5.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people9.png"><img src="Images/frame/frame8.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people10.png"><img src="Images/frame/frame6.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people11.png"><img src="Images/frame/frame7.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people12.png"><img src="Images/frame/frame3.png"></a></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people3.png"><img src="Images/frame/frame5.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people4.png"><img src="Images/frame/frame8.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people5.png"><img src="Images/frame/frame6.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people6.png"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people7.png"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people8.png"><img src="Images/frame/frame5.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people9.png"><img src="Images/frame/frame8.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people10.png"><img src="Images/frame/frame6.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people11.png"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/people/people12.png"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
         </ul>
     </div>
     <div class="animal" id="animal">
         <h2>动物</h2>
         <ul>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal1.jpg"><img src="Images/frame/frame2.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal2.jpg"><img src="Images/frame/frame6.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal3.jpg"><img src="Images/frame/frame1.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal4.jpg"><img src="Images/frame/frame7.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal5.jpg"><img src="Images/frame/frame6.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal6.jpg"><img src="Images/frame/frame3.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal7.jpg"><img src="Images/frame/frame2.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal8.jpg"><img src="Images/frame/frame1.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal9.jpg"><img src="Images/frame/frame4.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal10.jpg"><img src="Images/frame/frame5.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal11.jpg"><img src="Images/frame/frame1.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/animal/animal12.jpg"><img src="Images/frame/frame8.png"></a></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal1.jpg"><img src="Images/frame/frame2.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal2.jpg"><img src="Images/frame/frame6.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal3.jpg"><img src="Images/frame/frame1.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal4.jpg"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal5.jpg"><img src="Images/frame/frame6.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal6.jpg"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal7.jpg"><img src="Images/frame/frame2.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal8.jpg"><img src="Images/frame/frame1.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal9.jpg"><img src="Images/frame/frame4.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal10.jpg"><img src="Images/frame/frame5.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal11.jpg"><img src="Images/frame/frame1.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/animal/animal12.jpg"><img src="Images/frame/frame8.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
         </ul>
     </div>
     <div class="scenery" id="scenery">
         <h2>风景</h2>
         <ul>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/1.jpg"><img src="Images/frame/frame7.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/2.jpg"><img src="Images/frame/frame6.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/3.jpg"><img src="Images/frame/frame3.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/4.jpg"><img src="Images/frame/frame7.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/5.jpg"><img src="Images/frame/frame4.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/6.jpg"><img src="Images/frame/frame2.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/7.jpg"><img src="Images/frame/frame3.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/8.jpg"><img src="Images/frame/frame1.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/9.jpg"><img src="Images/frame/frame8.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/10.jpg"><img src="Images/frame/frame5.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/11.jpg"><img src="Images/frame/frame3.png"></a></li>
-            <li><a href="browse.jsp?photoName=Images/photos/scenery/12.jpg"><img src="Images/frame/frame7.png"></a></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/1.jpg"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/2.jpg"><img src="Images/frame/frame6.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/3.jpg"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/4.jpg"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/5.jpg"><img src="Images/frame/frame4.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/6.jpg"><img src="Images/frame/frame2.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/7.jpg"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/8.jpg"><img src="Images/frame/frame1.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/9.jpg"><img src="Images/frame/frame8.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/10.jpg"><img src="Images/frame/frame5.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/11.jpg"><img src="Images/frame/frame3.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                </ul></li>
+            <li><a href="browse.jsp?photoName=Images/photos/scenery/12.jpg"><img src="Images/frame/frame7.png"></a><ul>
+                <a href="#"><li><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+            </ul></li>
         </ul>
     </div>
 </div>
