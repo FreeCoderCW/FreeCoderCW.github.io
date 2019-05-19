@@ -1,73 +1,58 @@
 package CW;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import org.apache.commons.dbcp.BasicDataSource;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UsersDAO {
-	private static final String DB_FILE = "E:\\workspace\\JavaWeb\\web\\CW.txt";
-	
-	public static boolean check(String username){
-		boolean flag=false;
-		try {
-			Scanner cin=new Scanner(new File(DB_FILE));
-			while(cin.hasNextLine()){
-				String [] toks=cin.nextLine().trim().split("\\s+");
-				if(toks[0].equalsIgnoreCase(username)){
-					flag=true;
-					break;					
-				}				
-			}
-			cin.close();	
-		} catch (FileNotFoundException e) {
-			flag=false;
-		}
-		return flag;
-		
-	}
-	public static boolean check(String username,String password){
-		boolean flag=false;
-		try {
-			Scanner cin=new Scanner(new File(DB_FILE));
-			while(cin.hasNextLine()){
-				String [] toks=cin.nextLine().trim().split("\\s+");
-				if(toks[0].equalsIgnoreCase(username)){
-					if(toks[1].equals(password)){						
-						flag=true;					
-					}else{
-						flag=false;
-					}
-					break;					
-				}				
-			}
-			cin.close();	
-		} catch (FileNotFoundException e) {
-			flag=false;
-		}
-		return flag;
-		
-	}
-	
-	
-	
-	public static void main(String[] args) {
+    public static void update(String username, String password) throws Exception {
+        String url = "jdbc:mysql://localhost/users";
+        String user = "root";
+        String pwd = "";
+        String driverName = "com.mysql.jdbc.Driver";
 
-	}
-	public static boolean register(String username, String password) {
-		if(check(username))
-			return false;
-		try {
-			PrintWriter fw = new PrintWriter(new FileWriter(DB_FILE, true));
-			fw.println(String.format("%s %s",username,password));
-			fw.close();
-			return true;			
+        //创建连接池
+        BasicDataSource ds = new BasicDataSource();
+        ds.setDriverClassName(driverName);
+        ds.setUsername(user);
+        ds.setPassword(pwd);
+        ds.setUrl(url);
 
-		} catch (IOException e) {
-			return false;
-		}
-	
-	}
+        //获取连接
+        Connection conn = ds.getConnection();
+
+        String sql = "INSERT  INTO users(username,password) VALUES (?,?)";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, username);
+        ps.setString(2, password);
+        ps.executeUpdate();
+        JDBC_Util.close(conn, ps, null);
+    }
+
+    public static boolean check(String username) throws Exception{
+        String url = "jdbc:mysql://localhost/users";
+        String user = "root";
+        String pwd = "";
+        String driverName = "com.mysql.jdbc.Driver";
+
+        //创建连接池
+        BasicDataSource ds = new BasicDataSource();
+        ds.setDriverClassName(driverName);
+        ds.setUsername(user);
+        ds.setPassword(pwd);
+        ds.setUrl(url);
+
+        //获取连接
+        Connection conn = ds.getConnection();
+
+        String sql = "select username from users where username = '"+username+"'";
+
+        PreparedStatement ps = conn.prepareStatement(sql);
+
+        ResultSet rs = ps.executeQuery();
+        if(rs.next())return false;
+        else return true;
+    }
 }
