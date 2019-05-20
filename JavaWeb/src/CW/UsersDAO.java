@@ -55,4 +55,36 @@ public class UsersDAO {
         if(rs.next())return false;
         else return true;
     }
+
+
+    public static boolean check(String username,String password) throws Exception{
+        boolean flag=false;
+
+        String url = "jdbc:mysql://localhost/users";
+        String user = "root";
+        String pwd = "";
+        String driverName = "com.mysql.jdbc.Driver";
+
+        //创建连接池
+        BasicDataSource ds = new BasicDataSource();
+        ds.setDriverClassName(driverName);
+        ds.setUsername(user);
+        ds.setPassword(pwd);
+        ds.setUrl(url);
+
+        //获取连接
+        Connection conn = ds.getConnection();
+
+        String sql = "select * from users where username = '"+username+"'";
+
+        PreparedStatement ps = conn.prepareStatement(sql);
+
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            String name = rs.getString("username");
+            String pawd = rs.getString("password");
+            if(name.equals(username)&&pawd.equals(password))flag = true;
+        }
+        return flag;
+    }
 }
