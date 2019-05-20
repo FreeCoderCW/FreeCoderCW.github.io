@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
 <%@page import="CW.UsersDAO"%>
 <%
 	String path = request.getContextPath();
@@ -143,7 +143,10 @@
 				<h1>登陆结果</h1>
 		</div>
 		<div class="bottom">
-			<% if(UsersDAO.check(request.getParameter("username"), request.getParameter("password"))) { %>
+			<% if(UsersDAO.check(request.getParameter("username"), request.getParameter("password"))) {
+			    session.setAttribute("username",request.getParameter("username"));
+			    response.sendRedirect("index.jsp");
+			%>
 			<div class="right">
 				<img src="Images/right.png">
 				<h2>登陆成功</h2>
@@ -161,11 +164,7 @@
 		</div>
 
 	</div>
-	<%--用户名:<%=request.getParameter("username")%><br />--%>
-		<%--密码:<%=request.getParameter("password")%><br />--%>
 
-		<%--登陆结果<%=UsersDAO.check(request.getParameter("username"), request--%>
-							<%--.getParameter("password"))%>--%>
 
 	</body>
 </html>
