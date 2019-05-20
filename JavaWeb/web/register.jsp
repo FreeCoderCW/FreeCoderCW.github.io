@@ -1,5 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="CW.UsersDAO"%>
+<%@page import="CW.JDBC_Util" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -141,7 +145,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <h1>登陆结果</h1>
       </div>
       <div class="bottom">
-          <% if(UsersDAO.register(request.getParameter("username"), request.getParameter("password"))) { %>
+          <% if(UsersDAO.check(request.getParameter("username"))) {
+              UsersDAO.update(request.getParameter("username"),request.getParameter("password"));
+          %>
           <div class="right">
               <img src="Images/right.png">
               <h2>注册成功</h2>
@@ -159,6 +165,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
 
   </div>
+
 
    <%--<%=UsersDAO.register(request.getParameter("username"), request.getParameter("password"))--%>
     <%--%>--%>

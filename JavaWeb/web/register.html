@@ -179,12 +179,31 @@
     <img src="Images/navphoto2.png" class="photo2">
 </div>
 
+<script language="javascript">
+        function check() {
+            if(form1.username.value==""){
+                alert("请输入用户名!");form1.username.focus();return false;
+            }
+            if(form1.password.value==""){
+                alert("请输入密码！");form1.password.focus();return false;
+            }
+            if(form1.password2.value==""){
+                alert("请确认密码！");form1.password2.focus();return false;
+            }
+            if(form1.password.value!==form1.password2.value){
+                alert("两次密码输入不一致！请重新输入！");form1.password.focus();return false;
+            }
+            return true;
+        }
+</script>
+
+
 <div class="register">
     <div class="top">
         <h1>用户注册</h1>
     </div>
     <div class="buttom">
-        <form action="register.jsp" method="post">
+        <form name="form1" action="register.jsp" method="post" onsubmit="return check()">
             <div class="name">
                 <span>用户名</span>
                 <input type="text" name="username"/>
