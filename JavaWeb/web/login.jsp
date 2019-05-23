@@ -1,5 +1,9 @@
 <%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
 <%@page import="CW.UsersDAO"%>
+<%@ page import="javax.jws.soap.SOAPBinding" %>
+<%!
+	List<Integer> stateList = new LinkedList<>();
+%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -19,11 +23,11 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		<%--<meta http-equiv="refresh" content="3;url=Homepage.html">--%>
-		<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 		<style>
+			#div-001{
+				display: none;
+			}
 			*{
 				padding: 0;
 				margin: 0;
@@ -129,6 +133,9 @@
 				}
 			}
 		</style>
+		<script src="JS/index.js"></script>
+		<script src="JS/jquery-1.12.4.js"></script>
+
 	</head>
 
 	<body>
@@ -145,13 +152,16 @@
 		<div class="bottom">
 			<% if(UsersDAO.check(request.getParameter("username"), request.getParameter("password"))) {
 			    session.setAttribute("username",request.getParameter("username"));
-			    response.sendRedirect("index.jsp");
+
+			    stateList = UsersDAO.getState(request.getParameter("username"),stateList);
+			    session.setAttribute("statelist",stateList);
+
 			%>
 			<div class="right">
 				<img src="Images/right.png">
 				<h2>登陆成功</h2>
 				<p>欢迎你,<%=request.getParameter("username") %></p>
-				<a href="Homepage.html">进入主站</a>
+				<a href="homepage.jsp">进入主站</a>
 			</div>
 			<% } else { %>
 			<div class="wrong">
@@ -162,9 +172,8 @@
 			</div>
 			<% } %>
 		</div>
-
+<div id="div-001"></div>
 	</div>
-
 
 	</body>
 </html>

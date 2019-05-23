@@ -1,6 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <meta charset="UTF-8">
     <title>浏览模式</title>
@@ -136,7 +136,7 @@
 <body>
 <div class="lay_top">
     <img src="Images/logo.png" class="logo">
-    <a href="Homepage.html" class="back">返回</a>
+    <a href="homepage.jsp" class="back">返回</a>
     <img src="Images/navphoto1.png" class="photo1">
     <img src="Images/navphoto2.png" class="photo2">
 </div>

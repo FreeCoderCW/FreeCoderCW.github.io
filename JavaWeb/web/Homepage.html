@@ -11,6 +11,9 @@
         body{
             background: url("Images/wallpaper.jpg");
         }
+        #form{
+            display: none;
+        }
         ul{
             list-style: none;
         }
@@ -243,7 +246,15 @@
             width: 20px !important;
             margin-top: 0 !important;
         }
-
+        .content .like:hover{
+            opacity: 1;
+        }
+        .content .comment:hover{
+            opacity: 1;
+        }
+        .content .collect:hover{
+            opacity: 1;
+        }
         .content .people ul li:nth-child(1){
             background: url("Images/photos/people/people1.png") no-repeat center center;
             background-size: 100px 150px;
@@ -599,6 +610,12 @@
     </style>
 </head>
 <body>
+<form action="homepage.jsp" method="post" id="form">
+    <input type="text" name="userName" id="userName" value="" title="">
+    <input type="text" name="li_id" id="li_id" value="">
+    <input type="text" name="state" id="state" value="" title="">
+    <input type="submit" name="submit" id="submit">
+</form>
 <div class="lay_top">
     <img src="Images/logo.png" class="logo">
     <ul class="nav">
@@ -613,70 +630,70 @@
 <div class="content">
     <div class="people" id="people">
         <h2>人物</h2>
-        <ul>
-            <li><a href="browse.jsp?photoName=Images/photos/people/people1.png"><img src="Images/frame/frame3.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+        <ul id="people-ul">
+            <li id="Photo_1"><a href="browse.jsp?photoName=Images/photos/people/people1.png"><img src="Images/frame/frame3.png"></a><ul>
+                <li class="like" id="like-001"><img src="Images/like.png">点赞</li>
+                <li class="comment"><img src="Images/comment.png">评论</li>
+                <li class="collect" id="collect-001"><img src="Images/collect.png">收藏</li>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people2.png"><img src="Images/frame/frame7.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <li class="like" ><img src="Images/like.png">点赞</li>
+                <li class="comment"><img src="Images/comment.png">评论</li>
+                <li class="collect"><img src="Images/collect.png">收藏</li>
             </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people3.png"><img src="Images/frame/frame5.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
             </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people4.png"><img src="Images/frame/frame8.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
             </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people5.png"><img src="Images/frame/frame6.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
             </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people6.png"><img src="Images/frame/frame3.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
             </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people7.png"><img src="Images/frame/frame7.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
             </ul><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people8.png"><img src="Images/frame/frame5.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people9.png"><img src="Images/frame/frame8.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people10.png"><img src="Images/frame/frame6.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people11.png"><img src="Images/frame/frame7.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
             <li><a href="browse.jsp?photoName=Images/photos/people/people12.png"><img src="Images/frame/frame3.png"></a><ul>
-                <a href="#"><li><img src="Images/like.png">点赞</li></a>
-                <a href="#"><li><img src="Images/comment.png">评论</li></a>
-                <a href="#"><li><img src="Images/collect.png">收藏</li></a>
+                <a href="#"><li class="like"><img src="Images/like.png">点赞</li></a>
+                <a href="#"><li class="comment"><img src="Images/comment.png">评论</li></a>
+                <a href="#"><li class="collect"><img src="Images/collect.png">收藏</li></a>
                 </ul></li>
         </ul>
     </div>
@@ -811,5 +828,6 @@
         </ul>
     </div>
 </div>
+
 </body>
 </html>

@@ -147,6 +147,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="bottom">
           <% if(UsersDAO.check(request.getParameter("username"))) {
               UsersDAO.update(request.getParameter("username"),request.getParameter("password"));
+              UsersDAO.createSTable(request.getParameter("username"));
+
+              for(int i=1;i<37;i++){
+                  String li_idd="Photo_"+i;
+                  UsersDAO.Insert(request.getParameter("username"),li_idd,0,i);
+              }
           %>
           <div class="right">
               <img src="Images/right.png">
@@ -166,8 +172,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </div>
 
-
-   <%--<%=UsersDAO.register(request.getParameter("username"), request.getParameter("password"))--%>
-    <%--%>--%>
   </body>
 </html>

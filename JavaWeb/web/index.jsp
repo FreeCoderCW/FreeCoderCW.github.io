@@ -1,5 +1,4 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"  import="java.util.*,java.io.*" language="java" %>
 <html>
 <head>
     <title>用户注册和登录系统</title>
@@ -98,6 +97,7 @@
             width: 1000px;
             height: 500px;
         }
+
         @keyframes move {
             0%{
                 margin-left: 0;
@@ -127,7 +127,17 @@
 <div class="top">
     <img src="Images/logo.png" class="logo">
     <div class="logister">
-        <p><span>欢迎你</span>，请 <a href="login.html">登录</a> 或 <a href="register.html">注册</a></p>
+
+        <%
+            String name=(String)session.getAttribute("username");
+            if(name==null){
+                out.println("<p><span>欢迎你</span>，请 <a href=\"login.html\">登录</a> 或 <a href=\"register.html\">注册</a></p>");
+            }else{%>
+              <p><span>欢迎你,<%=name%></span><a href="homepage.jsp">进入主站</a></p>
+            <%}
+        %>
+
+
     </div>
     <img src="Images/navphoto1.png" class="photo1">
     <img src="Images/navphoto2.png" class="photo2">
